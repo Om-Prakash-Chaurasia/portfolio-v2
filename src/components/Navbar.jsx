@@ -12,6 +12,7 @@ function Navbar() {
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
+    { label: "Certifications", href: "#certifications" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -25,6 +26,7 @@ function Navbar() {
         "skills",
         "experience",
         "projects",
+        "certifications",
         "contact",
       ];
 
@@ -54,8 +56,34 @@ function Navbar() {
     };
   }, []);
 
-  const handleNavClick = () => {
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
+
+    const target = document.querySelector(href);
+
+    if (!target) {
+      console.log("Section not found:", href);
+      return;
+    }
+
+    // Close the mobile menu first
     setMenuOpen(false);
+
+    // Wait for the menu to close before calculating the position
+    setTimeout(() => {
+      const headerOffset = 80;
+
+      const targetPosition =
+        target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+
+      // Update the URL hash without triggering browser scrolling
+      window.history.pushState(null, "", href);
+    }, 300);
   };
 
   return (
@@ -70,7 +98,7 @@ function Navbar() {
         {/* Logo */}
         <a
           href="#home"
-          onClick={handleNavClick}
+          onClick={(event) => handleNavClick(event, "#home")}
           className="relative z-10 text-xl font-bold tracking-tight text-gray-950 dark:text-white"
         >
           OP<span className="text-gray-400">.</span>
@@ -86,6 +114,7 @@ function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(event) => handleNavClick(event, item.href)}
                 className="relative rounded-full px-4 py-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white"
               >
                 {isActive && (
@@ -166,7 +195,7 @@ function Navbar() {
                     <motion.a
                       key={item.label}
                       href={item.href}
-                      onClick={handleNavClick}
+                      onClick={(event) => handleNavClick(event, item.href)}
                       initial={{ opacity: 0, x: -15 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{

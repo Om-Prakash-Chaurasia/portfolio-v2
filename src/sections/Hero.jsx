@@ -14,7 +14,7 @@ function Hero() {
         <div className="absolute bottom-1/4 right-1/4 h-72 w-72 rounded-full bg-gray-200/40 blur-3xl dark:bg-gray-800/30" />
       </div>
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-16 px-6 py-32 lg:grid-cols-2 lg:px-8">
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-6 py-28 sm:gap-16 sm:py-32 lg:grid-cols-2 lg:px-8">
         {/* Left Content */}
         <div>
           <motion.p
@@ -30,7 +30,7 @@ function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="max-w-3xl text-5xl font-bold tracking-tight text-gray-950 sm:text-6xl lg:text-7xl dark:text-white"
+            className="max-w-3xl text-4xl font-bold tracking-tight text-gray-950 sm:text-6xl lg:text-7xl dark:text-white"
           >
             Hi, I'm{" "}
             <span className="text-gray-500 dark:text-gray-400">
@@ -42,7 +42,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 max-w-xl text-lg leading-8 text-gray-600 dark:text-gray-300"
+            className="mt-5 max-w-xl text-base leading-7 text-gray-600 sm:mt-6 sm:text-lg sm:leading-8 dark:text-gray-300"
           >
             {personalInfo.introduction}
           </motion.p>
@@ -52,22 +52,21 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4"
           >
             <a
               href="#projects"
-              className="rounded-full bg-gray-950 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-white dark:text-gray-950"
+              className="w-full rounded-full bg-gray-950 px-6 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:w-auto dark:bg-white dark:text-gray-950"
             >
               View My Work
             </a>
 
             <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-800 transition-all duration-300 hover:-translate-y-1 hover:border-gray-950 dark:border-gray-700 dark:text-gray-200 dark:hover:border-white"
+              href="/resume-om-prakash-chaurasia.pdf"
+              download
+              className="w-full rounded-full border border-gray-300 px-6 py-3 text-center text-sm font-semibold text-gray-800 transition-all duration-300 hover:-translate-y-1 hover:border-gray-950 dark:border-gray-700 dark:text-gray-200 dark:hover:border-white sm:w-auto"
             >
-              GitHub
+              Download Resume ↓
             </a>
           </motion.div>
 
@@ -123,7 +122,7 @@ function Hero() {
               <p className="pl-4 text-gray-500">
                 name:{" "}
                 <span className="text-gray-900 dark:text-gray-200">
-                  "Om Prakash"
+                  "Om Prakash Chaurasia"
                 </span>
               </p>
 

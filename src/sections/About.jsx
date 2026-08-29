@@ -5,22 +5,22 @@ function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-gray-50 py-24 dark:bg-gray-900"
+      className="relative overflow-hidden bg-gray-50 py-20 sm:py-24 dark:bg-gray-900"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
             About Me
           </p>
 
-          <h2 className="max-w-2xl text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl dark:text-white">
+          <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-gray-950 sm:text-5xl dark:text-white">
             {aboutInfo.heading}
           </h2>
         </motion.div>
@@ -33,12 +33,12 @@ function About() {
                 key={index}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{
                   duration: 0.6,
                   delay: index * 0.1,
                 }}
-                className="text-lg leading-8 text-gray-600 dark:text-gray-300"
+                className="text-base leading-7 text-gray-600 sm:text-lg sm:leading-8 dark:text-gray-300"
               >
                 {paragraph}
               </motion.p>
@@ -49,11 +49,11 @@ function About() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+            <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 dark:border-gray-800 dark:bg-gray-950">
               <p className="mb-8 text-sm font-semibold uppercase tracking-widest text-gray-400">
                 My Journey
               </p>
@@ -71,7 +71,7 @@ function About() {
                     key={stage}
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{
                       duration: 0.5,
                       delay: index * 0.1,
@@ -94,9 +94,9 @@ function About() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className="mt-16"
+          className="mt-12 sm:mt-16"
         >
           <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-gray-400">
             Core Strengths

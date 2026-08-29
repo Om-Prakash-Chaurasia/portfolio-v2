@@ -223,7 +223,7 @@ export const education = {
   degree: "Bachelor of Technology in Aeronautical Engineering",
   institution: "School of Aeronautics, RTU (Rajasthan Technical University)",
   period: "Aug 2017 — Oct 2021",
-  grade: "CGPA: 6.49",
+  grade: "CGPA: 7.21",
 };
 
 export const contactInfo = {

@@ -3,25 +3,28 @@ import { experience } from "../data/portfolioData";
 
 function Experience() {
   return (
-    <section id="experience" className="bg-gray-50 py-24 dark:bg-gray-900">
+    <section
+      id="experience"
+      className="bg-gray-50 py-20 sm:py-24 dark:bg-gray-900"
+    >
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
             Experience
           </p>
 
-          <h2 className="text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl dark:text-white">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-950 sm:text-5xl dark:text-white">
             Where I've worked
           </h2>
 
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-300">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-gray-600 sm:mt-5 sm:text-lg sm:leading-8 dark:text-gray-300">
             A journey across software development, technical mentoring,
             documentation, and professional experiences.
           </p>
@@ -32,7 +35,7 @@ function Experience() {
           {/* Timeline line */}
           <div className="absolute left-3 top-0 h-full w-px bg-gray-200 dark:bg-gray-800 md:left-1/2 md:-translate-x-1/2" />
 
-          <div className="space-y-12">
+          <div className="space-y-10 sm:space-y-12">
             {experience.map((item, index) => {
               const isLeft = index % 2 === 0;
 
@@ -48,7 +51,7 @@ function Experience() {
                     x: 0,
                   }}
                   viewport={{
-                    once: true,
+                    once: false,
                     amount: 0.2,
                   }}
                   transition={{
@@ -76,7 +79,7 @@ function Experience() {
                   </div>
 
                   {/* Mobile + content */}
-                  <div className="ml-8 md:col-span-2 md:ml-0">
+                  <div className="ml-7 md:col-span-2 md:ml-0">
                     <div
                       className={`md:grid md:grid-cols-2 md:gap-12 ${
                         isLeft ? "" : ""
@@ -89,7 +92,7 @@ function Experience() {
                             : "md:col-start-2 md:row-start-1"
                         }`}
                       >
-                        <div className="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-950">
+                        <div className="rounded-3xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-950">
                           {/* Mobile date */}
                           <div className="mb-5 md:hidden">
                             <TimelineDate
