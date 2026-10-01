@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { personalInfo } from "../data/portfolioData";
+import VisitorBadge from "./VisitorBadge";
 
 function Footer() {
   const footerLinks = [
@@ -86,10 +87,14 @@ function Footer() {
 
         {/* Bottom */}
         <div className="mt-10 flex flex-col gap-5 border-t border-gray-800 pt-6 sm:mt-12 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} {personalInfo.name}. All rights
-            reserved.
-          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <p className="text-xs text-gray-600">
+              © {new Date().getFullYear()} {personalInfo.name}. All rights
+              reserved.
+            </p>
+
+            <VisitorBadge />
+          </div>
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
             <a
